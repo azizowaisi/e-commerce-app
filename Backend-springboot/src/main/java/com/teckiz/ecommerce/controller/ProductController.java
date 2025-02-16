@@ -3,7 +3,7 @@ package com.teckiz.ecommerce.controller;
 
 import com.teckiz.ecommerce.dto.Response;
 import com.teckiz.ecommerce.exception.InvalidCredentialsException;
-import com.teckiz.ecommerce.service.interf.ProductServiceInterface;
+import com.teckiz.ecommerce.service.definition.ProductServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

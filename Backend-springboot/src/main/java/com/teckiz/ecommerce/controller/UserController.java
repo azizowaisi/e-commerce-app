@@ -2,7 +2,7 @@ package com.teckiz.ecommerce.controller;
 
 
 import com.teckiz.ecommerce.dto.Response;
-import com.teckiz.ecommerce.service.interf.UserServiceInterface;
+import com.teckiz.ecommerce.service.definition.UserServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

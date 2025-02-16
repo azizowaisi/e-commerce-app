@@ -4,7 +4,7 @@ package com.teckiz.ecommerce.controller;
 import com.teckiz.ecommerce.dto.OrderRequest;
 import com.teckiz.ecommerce.dto.Response;
 import com.teckiz.ecommerce.enums.OrderStatus;
-import com.teckiz.ecommerce.service.interf.OrderItemServiceInterface;
+import com.teckiz.ecommerce.service.definition.OrderItemServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

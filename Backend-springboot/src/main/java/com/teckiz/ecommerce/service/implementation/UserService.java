@@ -10,7 +10,7 @@ import com.teckiz.ecommerce.exception.NotFoundException;
 import com.teckiz.ecommerce.mapper.EntityDtoMapper;
 import com.teckiz.ecommerce.repository.UserRepository;
 import com.teckiz.ecommerce.security.JwtUtils;
-import com.teckiz.ecommerce.service.interf.UserServiceInterface;
+import com.teckiz.ecommerce.service.definition.UserServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;

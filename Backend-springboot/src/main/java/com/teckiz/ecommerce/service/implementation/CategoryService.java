@@ -6,7 +6,7 @@ import com.teckiz.ecommerce.entity.Category;
 import com.teckiz.ecommerce.exception.NotFoundException;
 import com.teckiz.ecommerce.mapper.EntityDtoMapper;
 import com.teckiz.ecommerce.repository.CategoryRepository;
-import com.teckiz.ecommerce.service.interf.CategoryServiceInterface;
+import com.teckiz.ecommerce.service.definition.CategoryServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

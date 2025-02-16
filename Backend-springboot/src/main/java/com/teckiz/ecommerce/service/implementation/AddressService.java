@@ -5,8 +5,8 @@ import com.teckiz.ecommerce.dto.Response;
 import com.teckiz.ecommerce.entity.Address;
 import com.teckiz.ecommerce.entity.User;
 import com.teckiz.ecommerce.repository.AddressRepository;
-import com.teckiz.ecommerce.service.interf.AddressServiceInterface;
-import com.teckiz.ecommerce.service.interf.UserServiceInterface;
+import com.teckiz.ecommerce.service.definition.AddressServiceInterface;
+import com.teckiz.ecommerce.service.definition.UserServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

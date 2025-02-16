@@ -6,7 +6,7 @@ import com.teckiz.ecommerce.exception.NotFoundException;
 import com.teckiz.ecommerce.mapper.EntityDtoMapper;
 import com.teckiz.ecommerce.repository.*;
 import com.teckiz.ecommerce.service.AwsS3Service;
-import com.teckiz.ecommerce.service.interf.ProductServiceInterface;
+import com.teckiz.ecommerce.service.definition.ProductServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;

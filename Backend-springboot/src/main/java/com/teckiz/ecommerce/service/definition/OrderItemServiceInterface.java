@@ -1,4 +1,4 @@
-package com.teckiz.ecommerce.service.interf;
+package com.teckiz.ecommerce.service.definition;
 
 import com.teckiz.ecommerce.dto.OrderRequest;
 import com.teckiz.ecommerce.dto.Response;
