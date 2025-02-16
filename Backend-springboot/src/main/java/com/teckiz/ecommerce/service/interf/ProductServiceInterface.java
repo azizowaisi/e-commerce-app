@@ -5,7 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 
-public interface ProductService {
+public interface ProductServiceInterface {
 
     Response createProduct(Long categoryId, MultipartFile image, String name, String description, BigDecimal price);
     Response updateProduct(Long productId, Long categoryId, MultipartFile image, String name, String description, BigDecimal price);

@@ -5,17 +5,17 @@ import com.teckiz.ecommerce.dto.Response;
 import com.teckiz.ecommerce.entity.Address;
 import com.teckiz.ecommerce.entity.User;
 import com.teckiz.ecommerce.repository.AddressRepository;
-import com.teckiz.ecommerce.service.interf.AddressService;
-import com.teckiz.ecommerce.service.interf.UserService;
+import com.teckiz.ecommerce.service.interf.AddressServiceInterface;
+import com.teckiz.ecommerce.service.interf.UserServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AddressServiceImpl implements AddressService {
+public class AddressService implements AddressServiceInterface {
 
     private final AddressRepository addressRepo;
-    private final UserService userService;
+    private final UserServiceInterface userService;
 
 
     @Override

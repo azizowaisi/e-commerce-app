@@ -5,7 +5,7 @@ import com.teckiz.ecommerce.dto.Response;
 import com.teckiz.ecommerce.dto.UserDto;
 import com.teckiz.ecommerce.entity.User;
 
-public interface UserService {
+public interface UserServiceInterface {
     Response registerUser(UserDto registrationRequest);
     Response loginUser(LoginRequest loginRequest);
     Response getAllUsers();

@@ -4,7 +4,7 @@ package com.teckiz.ecommerce.controller;
 import com.teckiz.ecommerce.dto.OrderRequest;
 import com.teckiz.ecommerce.dto.Response;
 import com.teckiz.ecommerce.enums.OrderStatus;
-import com.teckiz.ecommerce.service.interf.OrderItemService;
+import com.teckiz.ecommerce.service.interf.OrderItemServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class OrderItemController {
 
-    private final OrderItemService orderItemService;
+    private final OrderItemServiceInterface orderItemService;
 
     @PostMapping("/create")
     public ResponseEntity<Response> placeOrder(@RequestBody OrderRequest orderRequest){
