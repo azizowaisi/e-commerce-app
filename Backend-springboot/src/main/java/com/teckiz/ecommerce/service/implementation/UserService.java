@@ -10,7 +10,7 @@ import com.teckiz.ecommerce.exception.NotFoundException;
 import com.teckiz.ecommerce.mapper.EntityDtoMapper;
 import com.teckiz.ecommerce.repository.UserRepository;
 import com.teckiz.ecommerce.security.JwtUtils;
-import com.teckiz.ecommerce.service.interf.UserService;
+import com.teckiz.ecommerce.service.definition.UserServiceInterface;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
@@ -25,7 +25,7 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
+public class UserService implements UserServiceInterface {
 
 
     private final UserRepository userRepo;

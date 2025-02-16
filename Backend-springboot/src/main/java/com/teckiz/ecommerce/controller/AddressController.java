@@ -3,7 +3,7 @@ package com.teckiz.ecommerce.controller;
 
 import com.teckiz.ecommerce.dto.AddressDto;
 import com.teckiz.ecommerce.dto.Response;
-import com.teckiz.ecommerce.service.interf.AddressService;
+import com.teckiz.ecommerce.service.definition.AddressServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AddressController {
 
-    private final AddressService addressService;
+    private final AddressServiceInterface addressService;
 
     @PostMapping("/save")
     public ResponseEntity<Response> saveAndUpdateAddress(@RequestBody AddressDto addressDto){

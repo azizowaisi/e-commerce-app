@@ -2,7 +2,7 @@ package com.teckiz.ecommerce.controller;
 
 
 import com.teckiz.ecommerce.dto.Response;
-import com.teckiz.ecommerce.service.interf.UserService;
+import com.teckiz.ecommerce.service.definition.UserServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+    private final UserServiceInterface userService;
 
 
     @GetMapping("/get-all")

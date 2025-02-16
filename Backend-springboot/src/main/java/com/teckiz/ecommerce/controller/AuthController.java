@@ -4,7 +4,7 @@ package com.teckiz.ecommerce.controller;
 import com.teckiz.ecommerce.dto.LoginRequest;
 import com.teckiz.ecommerce.dto.Response;
 import com.teckiz.ecommerce.dto.UserDto;
-import com.teckiz.ecommerce.service.interf.UserService;
+import com.teckiz.ecommerce.service.definition.UserServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final UserService userService;
+    private final UserServiceInterface userService;
 
     @PostMapping("/register")
     public ResponseEntity<Response> registerUser(@RequestBody UserDto registrationRequest){

@@ -1,9 +1,9 @@
-package com.teckiz.ecommerce.service.interf;
+package com.teckiz.ecommerce.service.definition;
 
 import com.teckiz.ecommerce.dto.CategoryDto;
 import com.teckiz.ecommerce.dto.Response;
 
-public interface CategoryService {
+public interface CategoryServiceInterface {
 
     Response createCategory(CategoryDto categoryRequest);
     Response updateCategory(Long categoryId, CategoryDto categoryRequest);

@@ -3,7 +3,7 @@ package com.teckiz.ecommerce.controller;
 
 import com.teckiz.ecommerce.dto.CategoryDto;
 import com.teckiz.ecommerce.dto.Response;
-import com.teckiz.ecommerce.service.interf.CategoryService;
+import com.teckiz.ecommerce.service.definition.CategoryServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class CategoryController {
 
-    private final CategoryService categoryService;
+    private final CategoryServiceInterface categoryService;
 
     @PostMapping("/create")
     @PreAuthorize("hasAuthority('ADMIN')")

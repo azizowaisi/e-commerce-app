@@ -13,8 +13,8 @@ import com.teckiz.ecommerce.mapper.EntityDtoMapper;
 import com.teckiz.ecommerce.repository.OrderItemRepository;
 import com.teckiz.ecommerce.repository.OrderRepository;
 import com.teckiz.ecommerce.repository.ProductRepository;
-import com.teckiz.ecommerce.service.interf.OrderItemService;
-import com.teckiz.ecommerce.service.interf.UserService;
+import com.teckiz.ecommerce.service.definition.OrderItemServiceInterface;
+import com.teckiz.ecommerce.service.definition.UserServiceInterface;
 import com.teckiz.ecommerce.specification.OrderItemSpecification;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,13 +31,13 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class OrderItemServiceImpl implements OrderItemService {
+public class OrderItemService implements OrderItemServiceInterface {
 
 
     private final OrderRepository orderRepo;
     private final OrderItemRepository orderItemRepo;
     private final ProductRepository productRepo;
-    private final UserService userService;
+    private final UserServiceInterface userService;
     private final EntityDtoMapper entityDtoMapper;
 
 
