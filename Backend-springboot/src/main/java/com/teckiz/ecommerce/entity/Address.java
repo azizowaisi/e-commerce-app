@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "address")
+@Table(name = "`address`")
 public class Address {
 
     @Id

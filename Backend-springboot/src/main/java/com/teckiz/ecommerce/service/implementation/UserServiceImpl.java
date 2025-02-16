@@ -1,4 +1,4 @@
-package com.teckiz.ecommerce.service.impl;
+package com.teckiz.ecommerce.service.implementation;
 
 import com.teckiz.ecommerce.dto.LoginRequest;
 import com.teckiz.ecommerce.dto.Response;
@@ -8,7 +8,7 @@ import com.teckiz.ecommerce.enums.UserRole;
 import com.teckiz.ecommerce.exception.InvalidCredentialsException;
 import com.teckiz.ecommerce.exception.NotFoundException;
 import com.teckiz.ecommerce.mapper.EntityDtoMapper;
-import com.teckiz.ecommerce.repository.UserRepo;
+import com.teckiz.ecommerce.repository.UserRepository;
 import com.teckiz.ecommerce.security.JwtUtils;
 import com.teckiz.ecommerce.service.interf.UserService;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
 
-    private final UserRepo userRepo;
+    private final UserRepository userRepo;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtils jwtUtils;
     private final EntityDtoMapper entityDtoMapper;

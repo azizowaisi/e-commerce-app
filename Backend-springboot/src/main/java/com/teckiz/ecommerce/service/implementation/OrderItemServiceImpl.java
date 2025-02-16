@@ -1,4 +1,4 @@
-package com.teckiz.ecommerce.service.impl;
+package com.teckiz.ecommerce.service.implementation;
 
 import com.teckiz.ecommerce.dto.OrderItemDto;
 import com.teckiz.ecommerce.dto.OrderRequest;
@@ -10,9 +10,9 @@ import com.teckiz.ecommerce.entity.User;
 import com.teckiz.ecommerce.enums.OrderStatus;
 import com.teckiz.ecommerce.exception.NotFoundException;
 import com.teckiz.ecommerce.mapper.EntityDtoMapper;
-import com.teckiz.ecommerce.repository.OrderItemRepo;
-import com.teckiz.ecommerce.repository.OrderRepo;
-import com.teckiz.ecommerce.repository.ProductRepo;
+import com.teckiz.ecommerce.repository.OrderItemRepository;
+import com.teckiz.ecommerce.repository.OrderRepository;
+import com.teckiz.ecommerce.repository.ProductRepository;
 import com.teckiz.ecommerce.service.interf.OrderItemService;
 import com.teckiz.ecommerce.service.interf.UserService;
 import com.teckiz.ecommerce.specification.OrderItemSpecification;
@@ -34,9 +34,9 @@ import java.util.stream.Collectors;
 public class OrderItemServiceImpl implements OrderItemService {
 
 
-    private final OrderRepo orderRepo;
-    private final OrderItemRepo orderItemRepo;
-    private final ProductRepo productRepo;
+    private final OrderRepository orderRepo;
+    private final OrderItemRepository orderItemRepo;
+    private final ProductRepository productRepo;
     private final UserService userService;
     private final EntityDtoMapper entityDtoMapper;
 

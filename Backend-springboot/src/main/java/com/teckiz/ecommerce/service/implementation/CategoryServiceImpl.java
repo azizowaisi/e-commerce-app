@@ -1,11 +1,11 @@
-package com.teckiz.ecommerce.service.impl;
+package com.teckiz.ecommerce.service.implementation;
 
 import com.teckiz.ecommerce.dto.CategoryDto;
 import com.teckiz.ecommerce.dto.Response;
 import com.teckiz.ecommerce.entity.Category;
 import com.teckiz.ecommerce.exception.NotFoundException;
 import com.teckiz.ecommerce.mapper.EntityDtoMapper;
-import com.teckiz.ecommerce.repository.CategoryRepo;
+import com.teckiz.ecommerce.repository.CategoryRepository;
 import com.teckiz.ecommerce.service.interf.CategoryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class CategoryServiceImpl implements CategoryService {
 
-    private final CategoryRepo categoryRepo;
+    private final CategoryRepository categoryRepo;
     private final EntityDtoMapper entityDtoMapper;
 
 

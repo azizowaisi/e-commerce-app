@@ -1,10 +1,10 @@
-package com.teckiz.ecommerce.service.impl;
+package com.teckiz.ecommerce.service.implementation;
 
 import com.teckiz.ecommerce.dto.AddressDto;
 import com.teckiz.ecommerce.dto.Response;
 import com.teckiz.ecommerce.entity.Address;
 import com.teckiz.ecommerce.entity.User;
-import com.teckiz.ecommerce.repository.AddressRepo;
+import com.teckiz.ecommerce.repository.AddressRepository;
 import com.teckiz.ecommerce.service.interf.AddressService;
 import com.teckiz.ecommerce.service.interf.UserService;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AddressServiceImpl implements AddressService {
 
-    private final AddressRepo addressRepo;
+    private final AddressRepository addressRepo;
     private final UserService userService;
 
 

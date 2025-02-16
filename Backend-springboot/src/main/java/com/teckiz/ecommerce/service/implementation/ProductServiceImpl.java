@@ -1,17 +1,15 @@
-package com.teckiz.ecommerce.service.impl;
+package com.teckiz.ecommerce.service.implementation;
 
-import com.teckiz.ecommerce.dto.ProductDto;
-import com.teckiz.ecommerce.dto.Response;
-import com.teckiz.ecommerce.entity.Category;
-import com.teckiz.ecommerce.entity.Product;
+import com.teckiz.ecommerce.dto.*;
+import com.teckiz.ecommerce.entity.*;
 import com.teckiz.ecommerce.exception.NotFoundException;
 import com.teckiz.ecommerce.mapper.EntityDtoMapper;
-import com.teckiz.ecommerce.repository.CategoryRepo;
-import com.teckiz.ecommerce.repository.ProductRepo;
+import com.teckiz.ecommerce.repository.*;
 import com.teckiz.ecommerce.service.AwsS3Service;
 import com.teckiz.ecommerce.service.interf.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,13 +23,12 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
-    private final ProductRepo productRepo;
-    private final CategoryRepo categoryRepo;
+    private final ProductRepository productRepo;
+    private final CategoryRepository categoryRepo;
     private final EntityDtoMapper entityDtoMapper;
     private final AwsS3Service awsS3Service;
 
-
-
+    
     @Override
     public Response createProduct(Long categoryId, MultipartFile image, String name, String description, BigDecimal price) {
         Category category = categoryRepo.findById(categoryId).orElseThrow(()-> new NotFoundException("Category not found"));

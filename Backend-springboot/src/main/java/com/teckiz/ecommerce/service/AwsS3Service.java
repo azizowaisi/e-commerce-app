@@ -20,15 +20,17 @@ import java.io.InputStream;
 @Slf4j
 public class AwsS3Service {
 
-    private final String bucketName = "phegon-ecommerce";
-
     @Value("${aws.s3.access}")
     private String awsS3AccessKey;
     @Value("${aws.s3.secrete}")
     private String awsS3SecreteKey;
+    @Value("${aws.s3.region}")
+    private String awsS3Region;
+    @Value("${aws.s3.bucket-name}")
+    private String bucketName;
 
 
-    public String saveImageToS3(MultipartFile photo){
+    public String saveImageToS3(MultipartFile photo) {
         try {
             String s3FileName = photo.getOriginalFilename();
             //create aes credentials using the access and secrete key
@@ -37,7 +39,7 @@ public class AwsS3Service {
             //create an s3 client with config credentials and region
             AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
                     .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
-                    .withRegion(Regions.US_EAST_2)
+                    .withRegion(awsS3Region)
                     .build();
 
             //get input stream from photo
@@ -46,14 +48,15 @@ public class AwsS3Service {
             //set metedata for the onject
             ObjectMetadata metadata = new ObjectMetadata();
             metadata.setContentType("image/jpeg");
+            metadata.setContentLength(photo.getSize());
 
             //create a put request to upload the image to s3
             PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, s3FileName, inputStream, metadata);
             s3Client.putObject(putObjectRequest);
 
-            return "https://" + bucketName + ".s3.us-east-2.amazonaws.com/" + s3FileName;
+            return "https://" + bucketName + ".s3." + awsS3Region + ".amazonaws.com/" + s3FileName;
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("Unable to upload image to s3 bucket: " + e.getMessage());
         }
