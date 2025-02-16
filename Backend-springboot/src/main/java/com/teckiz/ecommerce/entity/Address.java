@@ -2,17 +2,13 @@ package com.teckiz.ecommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.time.LocalDateTime;
-
-@Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
+@Data
 @Table(name = "`address`")
-public class Address {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Address extends BasicEntity {
 
     private String street;
     private String city;
@@ -24,6 +20,4 @@ public class Address {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "created_at")
-    private final LocalDateTime createdAt = LocalDateTime.now();
 }

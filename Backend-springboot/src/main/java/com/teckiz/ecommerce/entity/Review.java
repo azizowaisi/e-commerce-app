@@ -2,18 +2,13 @@ package com.teckiz.ecommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.time.LocalDateTime;
-
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Data
-@Table(name = "`reviews`")
-public class Review {
+@Data@Table(name = "`reviews`")
+public class Review extends BasicEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private Long id;
     private String content;
     private int rating; // assuming it is in 1 to 10
 
@@ -24,7 +19,4 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
-    @Column(name = "created_at")
-    private final LocalDateTime createdAt = LocalDateTime.now();
 }

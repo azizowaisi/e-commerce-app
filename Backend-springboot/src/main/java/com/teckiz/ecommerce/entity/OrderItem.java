@@ -3,18 +3,14 @@ package com.teckiz.ecommerce.entity;
 import com.teckiz.ecommerce.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.Data;
-
+import lombok.EqualsAndHashCode;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
 @Table(name = "`order_item`")
-public class OrderItem {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class OrderItem extends BasicEntity{
 
     private int quantity;
     private BigDecimal price;
@@ -31,7 +27,4 @@ public class OrderItem {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private Order order;
-
-    @Column(name = "created_at")
-    private final LocalDateTime createdAt = LocalDateTime.now();
 }

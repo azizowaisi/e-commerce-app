@@ -2,14 +2,14 @@ package com.teckiz.ecommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
+import lombok.EqualsAndHashCode;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
-@Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
+@Data
 @Table(name = "`payment`")
-public class Payment {
+public class Payment extends BasicEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,4 @@ public class Payment {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private  Order order;
-
-    @Column(name = "created_at")
-    private final LocalDateTime createdAt = LocalDateTime.now();
 }

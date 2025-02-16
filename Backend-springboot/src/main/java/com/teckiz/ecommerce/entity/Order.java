@@ -2,19 +2,18 @@ package com.teckiz.ecommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
+@Data
 @Table(name = "`order`")
-public class Order {
+public class Order extends BasicEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private BigDecimal totalPrice;
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY,  cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItemList;
